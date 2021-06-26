@@ -1,0 +1,23 @@
+.sort {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &__select {
+    height: 40px;
+    color: #2a2a2a;
+    background-color: #fff;
+    border: 1px solid #ddf0dd;
+    border-radius: 5px;
+    outline: none;
+  }
+
+  &__label {
+    margin: 10px 30px 10px 0;
+    font-size: 16px;
+    color: #5c7d60;
+    font-weight: 500;
+    line-height: 25px;
+    cursor: pointer;
+  }
+}

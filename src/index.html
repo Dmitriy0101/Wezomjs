@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wezomjs</title>
+</head>
+<body>
+<main>
+    <div class="users">
+        <div class="container">
+            <button type="button" class="button btn btn-success" data-load-more>
+                <span class="spinner-border spinner-border-sm spinner is-hidden" data-load-spiner></span>
+                <span class="label">Загрузить пользователей</span>
+            </button>
+
+            <div class="users__body is-hidden">
+                <div class="row">
+                    <div class="col col-12 col-lg-2">
+                        <div class="filter is-hidden">
+                            <form class="search-form" action="" method="GET">
+                                <input placeholder="Поиск..." type="text" name="search" id="search" class="search-form__input" data-input-search/>
+                            </form>
+                            <div class="accordion">
+                                <div class="accordion-header" data-select>
+                                    <div class="accordion-header__name">Пол</div>
+                                    <div class="accordion-header__path" data-filter-path>
+                                        <svg width="15" height="10">
+                                            <use href="icons.svg#sprite-arrow__down"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="accordion-body">
+                                    <div class="accordion-body__item">
+                                        <a href="#" class="accordion-body__link">
+                                            <input class="accordion-body__input" type="checkbox" name="gender" value="male" id="male"/>
+                                            <label class="accordion-body__label" for="male">Мужчины</label>
+                                        </a>
+                                    </div>
+                                    <div class="accordion-body__item">
+                                        <a href="#" class="accordion-body__link">
+                                            <input class="accordion-body__input" type="checkbox" name="gender" value="female" id="female"/>
+                                            <label class="accordion-body__label" for="female">Женщины</label>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion">
+                                <div class="accordion-header" data-select>
+                                    <div class="accordion-header__name">Возраст</div>
+                                    <div class="accordion-header__path" data-filter-path>
+                                        <svg width="15" height="10">
+                                            <use href="icons.svg#sprite-arrow__down"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="accordion-body">
+                                    <div class="accordion-body__item">
+                                        <a href="#" class="accordion-body__link">
+                                            <input class="accordion-body__input" type="checkbox" name="age" value="0-35" id="younger35"/>
+                                            <label class="accordion-body__label" for="younger35">Младше 35</label>
+                                        </a>
+                                    </div>
+                                    <div class="accordion-body__item">
+                                        <a href="#" class="accordion-body__link">
+                                            <input class="accordion-body__input" type="checkbox" name="age" value="35-40" id="from35to40"/>
+                                            <label class="accordion-body__label" for="from35to40">От 35 до 40</label>
+                                        </a>
+                                    </div>
+                                    <div class="accordion-body__item">
+                                        <a href="#" class="accordion-body__link">
+                                            <input class="accordion-body__input" type="checkbox" name="age" value="40-45" id="from40to45"/>
+                                            <label class="accordion-body__label" for="from40to45">От 40 до 45</label>
+                                        </a>
+                                    </div>
+                                    <div class="accordion-body__item">
+                                        <a href="#" class="accordion-body__link">
+                                            <input class="accordion-body__input" type="checkbox" name="age" value="45+" id="older45"/>
+                                            <label class="accordion-body__label" for="older45">Старше 45</label>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="statistics"></div>
+                        </div>
+                    </div>
+
+                    <div class="col col-12 col-lg-10">
+                        <div class="is-hidden users-content">
+                            <div class="users-content__header">
+                                <div class="row w-100 flex-row justify-content-between">
+                                    <div class="col-12 col-lg-6">
+                                        <div class="sort">
+                                            <label class="sort__label" for="sort-control">Сортировать:</label>
+                                            <select class="sort__select w-100" name="order" id="sort-control">
+                                                <option value="0" class="sort__option">
+                                                    По умолчанию
+                                                </option>
+                                                <option value="1" class="sort__option">
+                                                    По алфавиту от А до Я
+                                                </option>
+                                                <option value="2" class="sort__option">
+                                                    По алфавиту от Я до А
+                                                </option>
+                                                <option value="3" class="sort__option">
+                                                    Мужчины - женщины
+                                                </option>
+                                                <option value="4" class="sort__option">
+                                                    Женщины - мужчины
+                                                </option>
+                                                <option value="5" class="sort__option">
+                                                    от А до Я, мужчины - женщины
+                                                </option>
+                                                <option value="6" class="sort__option">
+                                                    от Я до А, мужчины - женщины
+                                                </option>
+                                                <option value="7" class="sort__option">
+                                                    от А до Я, женщины - мужчины
+                                                </option>
+                                                <option value="8" class="sort__option">
+                                                    от Я до А, женщины - мужчины
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-6">
+                                        <div class="view-control justify-content-lg-end">
+                                            <label for="view-control" class="sort__label">Количество карточек:</label>
+                                            <select name="order" id="view-control" class="view-control__select">
+                                                <option value="5" class="sort__option">5</option>
+                                                <option value="10" class="sort__option">10</option>
+                                                <option value="20" class="sort__option">20</option>
+                                                <option value="100" class="sort__option">All</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row users-content__body" data-users-container></div>
+                            <div class="pagination">
+                                <a href="#" id="first-step" class="pagination__step pagination-state--disabled">
+                                    <svg class="pagination__icon" width="15" height="30">
+                                        <use href="icons.svg#sprite-double-arrow__left"></use>
+                                    </svg>
+                                </a>
+                                <a href="#" id="prev-step" class="pagination__step pagination-state--disabled">
+                                    <svg class="pagination__icon" width="15" height="30">
+                                        <use href="icons.svg#sprite-arrow__left"></use>
+                                    </svg>
+                                </a>
+                                <div class="pagination__list"></div>
+                                <a href="#" id="next-step" class="pagination__step">
+                                    <svg class="pagination__icon" width="15" height="30">
+                                        <use href="icons.svg#sprite-arrow__right"></use>
+                                    </svg>
+                                </a>
+                                <a href="#" id="last-step" class="pagination__step">
+                                    <svg class="pagination__icon" width="15" height="30">
+                                        <use href="icons.svg#sprite-double-arrow__right"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<template id="user-template">
+    <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-3">
+        <div class="user">
+            <picture class="user__picture">
+                <source srcset="{{hrefImg}}" />
+                <img class="user__img" src="{{hrefImg}}" alt="user photo" />
+            </picture>
+            <div class="user__body">
+                <div class="user__name">
+                    ФИО: {{lastName}} {{firstName}}, {{gender}}
+                </div>
+                <a href="tel: {{phone}}" class="user__link"
+                >Номер телефона: {{phone}}</a
+                >
+                <a href="mailto: {{email}}" class="user__link">Email: {{email}}</a>
+                <address class="user__address">
+                    Адрес: {{state}}, {{city}}, {{street}}
+                </address>
+                <div class="user__dob">Дата рождения: {{birthday}}</div>
+                <div class="user__register">Дата регистрации: {{registered}}</div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template id="statistics">
+    <div class="statistics__users">Общее кол-во пользователей: {{users}}</div>
+    <div class="statistics__female">
+        Кол-во женщин: {{female}} <br />Кол-во мужчин: {{male}}
+    </div>
+    <div class="statistics__gender">
+        Больше мужчин или женщин: {{dominantGender}}
+    </div>
+    <div class="statistics__nationality">
+        Кол-во человек по совпадающим национальностям: {{nationality}}
+    </div>
+</template>
+</body>
+</html>

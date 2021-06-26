@@ -1,0 +1,60 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Roboto", -apple-system, system-ui, BlinkMacSystemFont,
+  "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1840px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: fill;
+}
+
+h1,
+h2,
+h3,
+h4,
+ul,
+ol,
+p,
+button {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+button, input {
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
