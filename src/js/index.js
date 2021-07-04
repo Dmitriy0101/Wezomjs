@@ -23,7 +23,7 @@ function getRandomUser(max) {
 }
 
 function onLoad(e) {
-  showElem(basa.spiner);
+  showElem(basa.download);
   basa.search.value = "";
   basa.usersContainer.innerHTML = "";
   sortParams.selectedOptions = "";
@@ -61,7 +61,7 @@ function getUsers(randomUsers) {
 
 function fetchUsers() {
   getUsers(getRandomUser(100)).then((users) => {
-    hiddenElem(basa.spiner);
+    hiddenElem(basa.download);
     arrResultUsers = [...users];
     filterProducts();
 

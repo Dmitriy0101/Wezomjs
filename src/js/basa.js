@@ -1,6 +1,6 @@
 export default {
   loadMore: document.querySelector("[data-load-more]"),
-  spiner: document.querySelector("[data-load-spiner]"),
+  download: document.querySelector("[data-load-download]"),
   btnOpenContent: document.querySelector("[data-open-content]"),
   usersContainer: document.querySelector("[data-users-container]"),
   usersBody: document.querySelector(".users__body"),

@@ -11,7 +11,7 @@
     <div class="users">
         <div class="container">
             <button type="button" class="button btn btn-success" data-load-more>
-                <span class="spinner-border spinner-border-sm spinner is-hidden" data-load-spiner></span>
+                <span class="download-border download-border-sm download is-hidden" data-load-download></span>
                 <span class="label">Загрузить пользователей</span>
             </button>
 
@@ -181,9 +181,7 @@
                 <div class="user__name">
                     ФИО: {{lastName}} {{firstName}}, {{gender}}
                 </div>
-                <a href="tel: {{phone}}" class="user__link"
-                >Номер телефона: {{phone}}</a
-                >
+                <a href="tel: {{phone}}" class="user__link">Номер телефона: {{phone}}</a>
                 <a href="mailto: {{email}}" class="user__link">Email: {{email}}</a>
                 <address class="user__address">
                     Адрес: {{state}}, {{city}}, {{street}}
